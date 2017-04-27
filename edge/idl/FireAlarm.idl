@@ -1,0 +1,6 @@
+// FireAlarm.idl
+struct FireAlarm
+{
+    string<10> alarm_id;
+    boolean state;
+};
