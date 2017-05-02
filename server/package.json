@@ -6,7 +6,8 @@
     "express": "*",
     "socket.io": "*",
     "rticonnextdds-connector": "~0.2.0",
-    "sleep": "~5.1.0"
+    "sleep": "~5.1.0",
+    "body-parser": "~1.17.1"
   },
   "engine": "node >= 0.10.29"
 }
