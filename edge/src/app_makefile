@@ -1,5 +1,5 @@
 
-INCLUDES =  -I /home/ubuntu/rti_bbgpio/lib/gpio
-COMMONSOURCES = /home/ubuntu/rti_bbgpio/lib/gpio/BlackCore.cpp /home/ubuntu/rti_bbgpio/lib/gpio/BlackGPIO/BlackGPIO.cpp 
+INCLUDES =  -I /home/ubuntu/rti_wisun/lib/gpio
+COMMONSOURCES = /home/ubuntu/rti_wisun/lib/gpio/BlackCore.cpp /home/ubuntu/rti_wisun/lib/gpio/BlackGPIO/BlackGPIO.cpp 
 
 include ../src/make*
