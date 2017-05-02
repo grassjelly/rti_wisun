@@ -23,6 +23,7 @@
     <link href="https://daks2k3a4ib2z.cloudfront.net/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <link href="https://daks2k3a4ib2z.cloudfront.net/img/webclip.png" rel="apple-touch-icon">
     <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/notyf.min.css">
 
 </head>
 
@@ -182,13 +183,16 @@
         </div>
       </div>
     </template>
+    <script src="js/notyf.min.js" type="text/javascript"></script>
     <script>
         var socket = io.connect();
         var case_list = [];
         var map;
         var mapSettings;
         var displayed_case = null;
-
+        var notyf = new Notyf({
+            delay:10000,
+        })
         setInterval(function() {
             var date = new Date();
             document.getElementById("date").innerHTML = date;
@@ -213,6 +217,8 @@
 
         function addNewCase(fire_case) {
             playBeep();
+            notyf.alert("Fire Alert! Case No: " + fire_case.case_no);
+
             case_list.push(fire_case);
             var caseblock = document.getElementById('caseblock');
 
