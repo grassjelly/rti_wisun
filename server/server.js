@@ -15,7 +15,7 @@ var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 //either use cloud service port or local port:3000
-var port = process.env.PORT || 8000;
+var port = process.env.PORT || 8001;
 
 var case_index = 0;
 var case_list = [];
@@ -120,13 +120,14 @@ function lodgeCase(id) {
 }
 
 function caseIsLodged(id) {
+    console.log(case_list)
     //check if the list of lodged cases is empty
     if (case_list.length == 0) {
         return false;
     } else {
         //check the case if it has been lodged
         for (var i = 0; i < case_list.length; i++) {
-            if (case_list[i].id == id)
+            if (case_list[i].id == id && case_list[i].status != "DONE")
                 return true;
         }
         //when nothing found
